@@ -337,6 +337,38 @@ void PATBasicLevel_1018() {
     }
     printf("%c %c\n", map[id1], map[id2]);// 转换回BCJ
 }
+struct mooncake {
+    double store; // 库存量
+    double sell; // 总售价
+    double price;// 单价
+} cake[1010];
+bool cmp_mooncake(mooncake a, mooncake b) { // 按单价从高到低排列
+    return a.price > b.price;
+}
+void PATBasicLevel_1020() {
+    int n;
+    double D;
+    scanf("%d%lf", &n, &D);
+    for (int i = 0; i < n; i++) {
+        scanf("%lf", &cake[i].store);
+    }
+    for (int i = 0; i < n; i++) {
+        scanf("%lf", &cake[i].sell);
+        cake[i].price = cake[i].sell / cake[i].store;
+    }
+    sort(cake, cake + n, cmp_mooncake);
+    double ans = 0;
+    for (int i = 0; i < n; i++) {
+        if (cake[i].store <= D) { // 需求量高于月饼库存量
+            D -= cake[i].store; // 第i种月饼全部卖出
+            ans += cake[i].sell;
+        } else { // 月饼库存量高于需求量
+            ans += cake[i].price * D; // 只卖出剩余需求量的月饼
+            break;
+        }
+    }
+    printf("%.2f\n", ans);
+}
 
 void PATBasicLevel_1022() {
     int a,b,d;
