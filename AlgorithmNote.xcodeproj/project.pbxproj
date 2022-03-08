@@ -12,6 +12,7 @@
 		D74B2F6227CF0FA600A20885 /* Sort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D74B2F6027CF0FA600A20885 /* Sort.cpp */; };
 		D798265327BE2F2C002924FB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D798265227BE2F2C002924FB /* main.cpp */; };
 		D798273027C36526002924FB /* PATBasicLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D798272E27C36526002924FB /* PATBasicLevel.cpp */; };
+		D7D88CE527D731C000E46EBA /* Note.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7D88CE327D731C000E46EBA /* Note.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		D798265227BE2F2C002924FB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D798272E27C36526002924FB /* PATBasicLevel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PATBasicLevel.cpp; sourceTree = "<group>"; };
 		D798272F27C36526002924FB /* PATBasicLevel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PATBasicLevel.hpp; sourceTree = "<group>"; };
+		D7D88CE327D731C000E46EBA /* Note.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Note.cpp; sourceTree = "<group>"; };
+		D7D88CE427D731C000E46EBA /* Note.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Note.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				D798265227BE2F2C002924FB /* main.cpp */,
+				D7D88CE327D731C000E46EBA /* Note.cpp */,
+				D7D88CE427D731C000E46EBA /* Note.hpp */,
 				D74598B227C4BE59007FF8EC /* PATAdvancedLevel.cpp */,
 				D74598B327C4BE59007FF8EC /* PATAdvancedLevel.hpp */,
 				D798272E27C36526002924FB /* PATBasicLevel.cpp */,
@@ -141,6 +146,7 @@
 				D798265327BE2F2C002924FB /* main.cpp in Sources */,
 				D74598B427C4BE59007FF8EC /* PATAdvancedLevel.cpp in Sources */,
 				D798273027C36526002924FB /* PATBasicLevel.cpp in Sources */,
+				D7D88CE527D731C000E46EBA /* Note.cpp in Sources */,
 				D74B2F5F27CE029C00A20885 /* Codeup.cpp in Sources */,
 				D74B2F6227CF0FA600A20885 /* Sort.cpp in Sources */,
 			);
