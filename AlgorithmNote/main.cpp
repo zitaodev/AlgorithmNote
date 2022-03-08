@@ -23,6 +23,7 @@ void algorithm_practice();
 
 int main(int argc, const char * argv[]) {
     algorithm_practice();
+//    selectInterval();
     return 0;
 }
 
@@ -90,8 +91,9 @@ void algorithm_practice() {
     
     /*****************4.4 贪心*****************/
     // B1023.组个最小数
+//    PATBasicLevel_1023();
     // B1020/A1070.月饼
-    PATBasicLevel_1020();
+//    PATBasicLevel_1020();
     // A1033.To Fill or Not to Fill
     // A1037.Magic Coupon
     // A1067.Sort with Swap(0,*)

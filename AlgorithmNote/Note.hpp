@@ -12,6 +12,8 @@
 
 #endif /* Note_hpp */
 
+// 区间不相交
+void selectInterval();
 // 1 ～ 3 全排列组合,index:从第几位开始排列；
 void generateP_43(int index);
 // n个皇后组合数

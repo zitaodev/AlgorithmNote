@@ -7,7 +7,44 @@
 
 #include "Note.hpp"
 #include <math.h>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+// 4.4.2 区间贪心
+/*
+ 区间不相交问题：给出N个开区间，从中选择尽可能多的开区间，使得这些开区间两两没有交集，如对开区间(1,3)(2,4)(3,5)(6,7)，可以选择最多三个区间(1,3)(3,5)(6,7)
+ */
+const int maxn_I = 110;
+struct Interval {
+    int x, y; // 开区间左右端点
+}I[maxn_I];
 
+bool cmp_I(Interval a, Interval b) {
+    if (a.x != b.x) {
+        return a.x > b.x; // 先按照左端点从大到小排序
+    }else {
+        return a.y < b.y; // 左端点相同按右端点从小到大排序
+    }
+}
+void selectInterval() {
+    int n;
+    while(scanf("%d", &n), n != 0) {
+        for (int i = 0; i < n; i++) {
+            scanf("%d%d", &I[i].x, &I[i].y);
+        }
+        sort(I, I + n, cmp_I);// 把区间排序
+        // ans记录不相交区间个数，lastx记录上一个被选中区间的左端点
+        int ans = 1, lastX = I[0].x;
+        for (int i = 1; i < n; i++) {
+            if (I[i].y <= lastX) { //如果该区间右端点在lastx左边，则该交换位置
+                lastX = I[i].x;
+                ans++;
+            }
+        }
+        printf("%d\n", ans);
+        
+    }
+}
 // 4.3 递归
 /*
  全排列：输出1 ～ n这n个整数的全排列，可分解为输出以1开头的全排列，输出以2开头的全排列。。。输出以n开头的全排列
