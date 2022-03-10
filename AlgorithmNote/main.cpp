@@ -27,6 +27,17 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
+int hashTabale_F[100] = {0};
+void find(int a[], int len) {
+    for (int i = 0; i < len; i++) {
+        hashTabale_F[a[i]]++;
+    }
+    for (int i = 0; i < len; i++) {
+        if (hashTabale_F[a[i]] == 1) {
+            printf("");
+        }
+    }
+}
 // AlgorithmNote-上机训练实战
 void algorithm_practice() {
     /*****************3.1 简单模拟*****************/

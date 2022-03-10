@@ -254,6 +254,65 @@ void PATAdvancedLevel_1031() {
      */
 }
 
+const int maxn_1033 = 510; // 加油站数量
+const int INF_1033 = 1000000000;
+struct Station {
+    double price, dis;
+}station[maxn_1033];
+bool cmp_1033(Station a, Station b) {
+    return  a.dis < b.dis;
+}
+void PATAdvancedLevel_1033() {
+    int n;
+    double Cmax, D, Davg;
+    scanf("%lf%lf%lf%d", &Cmax, &D, &Davg, &n);
+    for (int i = 0; i < n; i++) {
+        scanf("%lf%lf", &station[i].price, &station[i].dis);
+    }
+    station[n].price = 0; // 终点加油站的价格
+    station[n].dis = D; // 终点与起点的距离
+    sort(station, station + n, cmp_1033);// 加油站按从小到大排序
+    if (station[0].dis != 0) { // 当排序后第一加油站距离不是0，说明无法前进
+        printf("The maximum travel distance == 0.00\n");
+    } else {
+        int now = 0; // 当前所处加油站编号
+        double ans = 0, nowTank = 0, MAX = Cmax * Davg;//  总花费，当前油量及满油行驶距离
+        while (now < n) { // 每次循环选出下一个需要到达的加油站
+            int k = -1;
+            double priceMin = INF_1033;
+            for (int i = now + 1; i <= n && station[i].dis - station[now].dis <= MAX; i++) {
+                if (station[i].price < priceMin) {
+                    priceMin = station[i].price;
+                    k = i;
+                    if (priceMin < station[now].price) {
+                        break;
+                    }
+                }
+            }
+            if (k == -1) {
+                break;
+            }
+            double need = (station[k].dis - station[now].dis) / Davg;
+            if (priceMin < station[now].price) { // 加油站k的油价低于当前油价，只买足够到达加油站k的油
+                if (nowTank < need) {
+                    ans += (need - nowTank) * station[now].price;
+                    nowTank = 0;
+                } else {
+                    nowTank -= need;
+                }
+            } else { // 加油站k的油价高于当前油价，直接将油箱加满
+                ans += (Cmax - nowTank) * station[now].price;
+                nowTank = Cmax - need;
+            }
+            now = k; // 达到加油站k，进入下一层循环
+        }
+        if (now == n) { // 能到达终点
+            printf("%.2f\n", ans);
+        } else { // 不能达到终点，最远距离是当前加油距离 + 满油状态能跑最远距离
+            printf("The maximum travel distance == %.2f\n", station[now].dis + MAX);
+        }
+    }
+}
 
 struct student_1036 {
     char name[15];

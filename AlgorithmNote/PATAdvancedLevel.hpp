@@ -21,6 +21,7 @@ void PATAdvancedLevel_1011();// 1011.world cup betting
 void PATAdvancedLevel_1022();// 1022.D进制的A+B
 void PATAdvancedLevel_1025();// 1025.PAT Ranking
 void PATAdvancedLevel_1031();
+void PATAdvancedLevel_1033();
 void PATAdvancedLevel_1036();// 1036.boys vs girls
 void PATAdvancedLevel_1041();
 void PATAdvancedLevel_1042();// 1042.shuffling machine
