@@ -611,6 +611,10 @@ void PATBasicLevel_1036() {
     }
 }
 
+void PATBasicLevel_1037() {
+    
+}
+
 int hashTable_1038[110] = {0};
 void PATBasicLevel_1038() {
     int n, score, k;

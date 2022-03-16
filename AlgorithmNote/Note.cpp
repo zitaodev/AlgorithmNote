@@ -219,6 +219,17 @@ void isFound1 () {
     }
 }
 
+int hashTabale_F[100] = {0};
+void find(int a[], int len) {
+    for (int i = 0; i < len; i++) {
+        hashTabale_F[a[i]]++;
+    }
+    for (int i = 0; i < len; i++) {
+        if (hashTabale_F[a[i]] == 1) {
+            printf("");
+        }
+    }
+}
 // 2.5.4
 // 2.5.3 二维数组:可以看作一维数组的每一个元素都是一个一维数组，如int a[5][6]看作是5个长度为6的一维数组
 // warning：如果数组大小较大（大概10^6级别），则需要将其定义在主函数外面，否则会使程序异常退出，原因是函数内部申请的局部变量来自系统栈，允许申请的空间较小；
